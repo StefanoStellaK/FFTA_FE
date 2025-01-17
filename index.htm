@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FFTA Tracking</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Barra laterale -->
+    <div class="sidebar">
+      <h3>Menu</h3>
+      <a href="#" id="menu-job">Job</a>
+      <a href="#" id="menu-abilita">Abilità</a>
+      <a href="#" id="menu-personaggi">Personaggi</a>
+    </div>
+
+    <!-- Contenuto principale -->
+    <div class="main-content">
+      <div id="job-viewer">
+        <h1>Job Viewer</h1>
+        <div class="dropdown-container">
+          <label for="razza-dropdown">Seleziona Razza:</label>
+          <select id="razza-dropdown">
+            <option value="all">Tutte</option>
+          </select>
+          <button class="btn" id="search-btn"><span>⚡</span> Cerca</button>
+        </div>
+        <table
+          id="job-table"
+          border="1"
+          style="width: 100%; text-align: left; border-collapse: collapse"
+        >
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Razza</th>
+              <th>Requisiti</th>
+              <th>Descrizione</th>
+              <th>Forza</th>
+              <th>Destrezza</th>
+              <th>Magia</th>
+              <th>Voto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dati dei job verranno inseriti qui dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="personaggio-viewer" style="display: none">
+        <h1>Personaggi</h1>
+        <button class="btn" id="add-personaggio-btn">
+          + Crea Nuovo Personaggio
+        </button>
+
+        <table
+          id="personaggio-table"
+          border="1"
+          style="width: 100%; text-align: left; border-collapse: collapse"
+        >
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Razza</th>
+              <th>Job Attuale</th>
+              <th>Azioni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dati dei personaggi verranno inseriti qui dinamicamente -->
+          </tbody>
+        </table>
+
+        <!-- Modale per il form di creazione -->
+        <div id="personaggio-modal" class="modal" style="display: none">
+          <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Crea Nuovo Personaggio</h2>
+            <form id="personaggio-form">
+              <div>
+                <label for="personaggio-nome">Nome:</label>
+                <input type="text" id="personaggio-nome" required />
+              </div>
+              <div>
+                <label for="personaggio-razza">Razza:</label>
+                <select id="personaggio-razza" required>
+                  <!-- Opzioni delle razze -->
+                </select>
+              </div>
+              <div>
+                <label for="personaggio-job">Job Attuale:</label>
+                <select id="personaggio-job">
+                  <option value="">Nessun job</option>
+                  <!-- Opzioni dei job -->
+                </select>
+              </div>
+              <div class="modal-buttons">
+                <button type="submit" class="btn">Salva</button>
+                <button
+                  type="button"
+                  class="btn btn-cancel"
+                  id="cancel-modal-btn"
+                >
+                  Annulla
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

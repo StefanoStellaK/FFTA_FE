@@ -1,0 +1,152 @@
+/* Corpo della pagina: Layout principale */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh; /* La pagina occupa almeno l'altezza della finestra */
+  display: flex; /* Layout a due colonne con Flexbox */
+  flex-direction: row; /* Allinea la barra laterale e il contenuto principale orizzontalmente */
+}
+
+/* Barra laterale */
+.sidebar {
+  width: 200px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Impedisce alla barra laterale di ridimensionarsi */
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.sidebar a:hover {
+  background-color: #34495e;
+  padding-left: 10px;
+}
+
+/* Contenuto principale */
+.main-content {
+  flex: 1; /* Occupa tutto lo spazio rimanente */
+  padding: 20px;
+}
+
+.dropdown-container {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.grid-item {
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #34495e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #000000;
+}
+
+/* Stile generale per le tabelle */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #bdc3c7;
+}
+
+/* Stile specifico per l'intestazione */
+th {
+  background-color: #34495e;
+  color: white;
+}
+
+/* Stile per le righe */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Colore alternato per le righe */
+}
+
+tr:hover {
+  background-color: #dcdcdc; /* Colore al passaggio del mouse */
+}
+
+/* Stile per il modale */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  background-color: #bdc3c7;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-cancel:hover {
+  background-color: #95a5a6;
+}
